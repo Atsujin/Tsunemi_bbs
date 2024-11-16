@@ -49,7 +49,7 @@ class BbsController extends Controller
      */
     public function show()
     {
-        $bbss = Bbs::paginate(20);
+        $bbss = Bbs::orderBy('created_at', 'desc')->paginate(20);
 
         return view('bbs.show', compact('bbss'));
     }
