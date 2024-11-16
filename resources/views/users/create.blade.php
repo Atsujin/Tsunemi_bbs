@@ -5,7 +5,7 @@
         <title>新規登録</title>
         @vite('resources/css/app.css')
   </head>
-  <body style="background-image:url('/storage/images/white_00108.jpg')">
+  <body style="background-image:url('/storage/white_00108.jpg')">
   <section class="text-gray-600 body-font relative">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">

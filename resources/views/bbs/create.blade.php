@@ -5,7 +5,7 @@
         <title>投稿フォーム</title>
         @vite('resources/css/app.css')
   </head>
-  <body style="background-image:url('/storage/images/white_00108.jpg')">
+  <body style="background-image:url('/storage/white_00108.jpg')">
   @auth
     <div class="alert alert-danger text-right w-25 mx-auto text-indigo-500 mt-4">{{ \Illuminate\Support\Facades\Auth::user()->name }}</div>
     <form action="{{ route('users.logout') }}" method="post">
