@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Bbs;
+use Illuminate\Support\Facades\Auth;
+
 
 class BbsController extends Controller
 {
@@ -50,8 +52,9 @@ class BbsController extends Controller
     public function show()
     {
         $bbss = Bbs::orderBy('created_at', 'desc')->paginate(20);
+        $auth = Auth::user();
 
-        return view('bbs.show', compact('bbss'));
+        return view('bbs.show', compact('bbss', 'auth'));
     }
 
     /**

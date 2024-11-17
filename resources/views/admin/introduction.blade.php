@@ -28,7 +28,7 @@
       <h1 class="title-font sm:text-xl text-3xl mb-4 font-medium text-gray-900">年表<h1>
         <ul>
         <li class="mb-2 leading-relaxed">2002：島本第二中学校卒業</li>
-        <li class="mb-2 leading-relaxed">2005：向陽台高等学校卒業</li>
+        <li class="mb-2 leading-relaxed">2006：向陽台高等学校卒業</li>
         <li class="mb-2 leading-relaxed">2005~2009：不動産仲介会社に務めるも退社 アルバイト</li>
         <li class="mb-2 leading-relaxed">2009：（株）瀬戸田エレック(電気通信事業)入社~現在に至る</li>
         <li class="mb-2 leading-relaxed">2014：結婚する</li>
