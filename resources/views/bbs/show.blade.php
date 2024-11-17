@@ -45,8 +45,8 @@
         <div class="md:flex-grow">
           <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{{ $bbs->title }}</h2>
           <p class="leading-relaxed">{{ $bbs->body }}</p>
+          @auth
            @if($auth->name === $bbs->name)
-           <!-- @auth -->
           <form action="{{ route('destroy', ['id' => $bbs->id]) }}" method="post" name="delete">
             @csrf
             @method('DELETE')
@@ -57,8 +57,8 @@
             </svg>
             </button>
           </form>
-          <!-- @endauth -->
-           @endif
+          @endif
+          @endauth
         </div>
       </div>
         @endforeach
