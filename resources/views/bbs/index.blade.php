@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <title>皆の掲示板</title>
         @vite('resources/css/app.css')
-  </head>
-  <html>
+    </head>
   <body style="background-image:url('/storage/white_00108.jpg')">
   <header class="text-gray-600 body-font bg-indigo-400">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
