@@ -11,9 +11,9 @@
     <!-- <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"> -->
         <!-- <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path> -->
       <!-- </svg> -->
-      <span class="ml-3 text-xl">皆の掲示板</span>
+      <!-- <span class="ml-3 text-xl">皆の掲示板</span> -->
     <!-- </a> -->
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+    <!-- <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <a href="/thread/create" class="mr-5 hover:text-gray-900">スレッド作成</a>
       @auth
       <a href="/admin" class="mr-5 hover:text-gray-900">管理人紹介</a>
@@ -35,7 +35,7 @@
       </svg>
     </button>
     </form>
-    @endauth
+    @endauth -->
   </div>
 </header>
     @auth
