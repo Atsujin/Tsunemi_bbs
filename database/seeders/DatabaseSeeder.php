@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            BbsSeeder::class,
-        ]);
+        // $this->call([
+        //     BbsSeeder::class,
+        // ]);
 
        \App\Models\Bbs::factory(100)->create();
 

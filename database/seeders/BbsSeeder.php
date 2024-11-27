@@ -17,7 +17,8 @@ class BbsSeeder extends Seeder
             [
                 'name' => 'aaa',
                 'title' => 'kkk',
-                'body' => 'jjj'
+                'body' => 'jjj',
+                'thread_id' => 2
             ]
         ]);
     }

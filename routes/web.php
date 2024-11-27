@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\BbsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('bbs.index');
-});
+// Route::get('/', function () {
+//     return view('bbs.index');
+// });
+
+Route::get('/', [BbsController::class, 'index'])->name('index');
 
 //投稿フォーム
 Route::get('/create', function() {
@@ -30,5 +33,13 @@ Route::post('/users/logout', [AuthController::class, 'logout'])->name('users.log
 Route::get('/admin', function() {
     return view('admin.introduction');
 });
+
+//スレッド
+Route::get('/thread/create', [ThreadController::class, 'create'])->name('thread.create');
+Route::post('/thread/store', [ThreadController::class, 'store'])->name('thread.store');
+Route::get('/thread/show{id}', [ThreadController::class, 'show'])->name('thread.show');
+Route::get('/thread/{id}/edit', [ThreadController::class, 'edit'])->name('thread.edit');
+Route::post('/thread/{id}/update', [ThreadController::class, 'update'])->name('thread.update');
+Route::delete('/thread/{id}/destroy', [ThreadController::class, 'destroy'])->name('thread.destroy');
 
 

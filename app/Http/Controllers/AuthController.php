@@ -18,7 +18,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/')->with('alertMessage', 'ログインしました。');
+            return redirect()->intended('/')->with('alertMessage', 'ログインしました');
         };
 
         return back()->withErrors([
@@ -36,6 +36,7 @@ class AuthController extends Controller
     // セッションを無効化を再生成(セキュリティ対策のため)
     $request->session()->regenerateToken();
 
+    session()->flash('message', 'ログアウトしました');
     return redirect('/');
 }
 }

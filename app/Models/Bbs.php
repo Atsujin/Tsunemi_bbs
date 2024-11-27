@@ -9,4 +9,9 @@ use Illuminate\Notifications\Notifiable;
 class Bbs extends Model
 {
     use HasFactory, Notifiable;
+    
+    public function thread()
+    {
+        return $this->belongsTo('App/Thread');
+    }
 }

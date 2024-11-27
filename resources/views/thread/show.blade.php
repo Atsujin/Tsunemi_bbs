@@ -6,33 +6,17 @@
         @vite('resources/css/app.css')
   </head>
   <body style="background-image:url('/storage/white_00108.jpg')">
-  @auth
-    <div class="alert alert-danger text-right w-25 mx-auto text-indigo-500 mt-4">{{ \Illuminate\Support\Facades\Auth::user()->name }}</div>
-    <form action="{{ route('users.logout') }}" method="post">
-      @csrf
-      <button class="flex ml-auto mt-4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-      <font style="vertical-align: inherit;">
-        <font style="vertical-align: inherit;">ログアウト</font>
-      </font>
-      </button>
-    </form>
-    @endauth
   <div class="flex flex-col text-center w-full mb-20">
-      <!-- <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
-        <font style="vertical-align: inherit;">
-          <font style="vertical-align: inherit;">皆で語ろう</font>
-        </font>
-      </h2> -->
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 mt-24">
+  <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 mt-24">
         <font style="vertical-align: inherit;">
           <font style="vertical-align: inherit;">投稿一覧</font>
         </font>
       </h1>
-      <!-- <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+      <h2 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 mt-12">
         <font style="vertical-align: inherit;">
-          <font style="vertical-align: inherit;">名前 タイトル 本文 のみの投稿でみんなで語りましょう</font>
+          <font style="vertical-align: inherit;">{{ $thread->title }}</font>
         </font>
-      </p> -->
+      </h2>
     </div>   
     <div class="xl:w-1/2 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
         <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
@@ -40,7 +24,7 @@
             <font style="vertical-align: inherit;">投稿する</font>
           </font>
         </h2>
-        <a href="/create" class="text-indigo-500 inline-flex items-center">
+        <a href="{{ route('thread.edit', $thread) }}" class="text-indigo-500 inline-flex items-center">
           <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;">こちら</font>
           </font>
@@ -63,9 +47,10 @@
         <div class="md:flex-grow">
           <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{{ $bbs->title }}</h2>
           <p class="leading-relaxed">{{ $bbs->body }}</p>
+        </div>
           @auth
            @if($auth->name === $bbs->name)
-          <form action="{{ route('destroy', ['id' => $bbs->id]) }}" method="post" name="delete">
+          <form action="{{ route('thread.destroy', ['id' => $bbs->id]) }}" method="post" name="delete">
             @csrf
             @method('DELETE')
             <button type="submit" class="text-indigo-500 inline-flex items-center mt-4">削除する
@@ -77,11 +62,11 @@
           </form>
           @endif
           @endauth
-        </div>
       </div>
         @endforeach
 </div>
 {{ $bbss->links() }}
+
 
 <div class="mt-48">
   <a href="/" class="text-indigo-500">トップページへ</a>

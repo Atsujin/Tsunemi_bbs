@@ -20,6 +20,7 @@ class BbsFactory extends Factory
             'name' => $this->faker->name(20),
             'title' => $this->faker->realText(50),
             'body' => $this->faker->realText(200),
+            'thread_id' => $this->faker->numberBetween(1, 4),
         ];
     }
 }

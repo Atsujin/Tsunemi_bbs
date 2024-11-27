@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBbsRequest;
 use Illuminate\Http\Request;
 use App\Models\Bbs;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Thread;
 
 
 class BbsController extends Controller
@@ -15,7 +17,10 @@ class BbsController extends Controller
      */
     public function index()
     {
-        //
+        $threads = Thread::all();
+        $auth = Auth::user();
+
+        return view('bbs.index', compact('threads', 'auth'));
     }
 
     /**
@@ -29,19 +34,14 @@ class BbsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBbsRequest $request)
     {
-        $validated = $request->validate([
-            'name' => ['required', 'max:20'],
-            'title' => ['required', 'max:20'],
-            'body' => ['required', 'max:255']
-        ]);
-
         $bbs = new Bbs;
         $bbs->name = $request->name;
         $bbs->title = $request->title;
         $bbs->body = $request->body;
         $bbs->save();
+        
 
         return redirect('/');
     }
