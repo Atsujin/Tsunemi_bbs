@@ -65,4 +65,22 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
 
-# 皆の掲示板(ポートフォリオ)
+# 皆の掲示板
+## 使用技術
+- laravel11
+- tailwindcss
+- node.js v20.17.0
+- npm v10.8.2
+## 概要
+- 転職用のポートフォリオ
+- 作成期間 1ヵ月
+- xserverにデプロイ(xs520929.xsrv.jp)
+## 機能
+- ログイン機能
+- ログイン済みユーザーのみ投稿削除
+- ログイン済みユーザーのみ管理者プロフィール閲覧
+- スレッド作成
+- 各スレッドへの投稿
+- 投稿ページネーション
+
+
